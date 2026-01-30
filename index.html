@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate research topics, objectives, and keywords instantly without AI. A fast, rule-based tool for students.">
+    <meta name="keywords" content="research topic generator, thesis ideas, project topics, student tools, no AI generator">
+    <meta name="author" content="TopicForge">
+    <title>Free Research Topic Generator for Students | TopicForge</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-layer-group"></i> TopicForge
+        </div>
+        <div class="nav-links">
+            <a href="#generator">Generator</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Generator Section -->
+    <header id="generator" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Instant Research Topic Generator</h1>
+                <p class="subtitle">100% Client-Side. No AI. No Database. Fast & Private.</p>
+                
+                <div class="generator-card">
+                    <div class="input-group">
+                        <label for="subject"><i class="fa-solid fa-book"></i> Subject Area</label>
+                        <select id="subject">
+                            <option value="" disabled selected>Select a Field...</option>
+                            <!-- Options populated by JS -->
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="level"><i class="fa-solid fa-graduation-cap"></i> Academic Level</label>
+                        <select id="level">
+                            <option value="diploma">Diploma / HND</option>
+                            <option value="undergraduate" selected>Undergraduate (BSc/BA)</option>
+                            <option value="postgraduate">Postgraduate (MSc/MBA)</option>
+                            <option value="phd">PhD / Research Thesis</option>
+                        </select>
+                    </div>
+
+                    <div class="options-group">
+                        <div class="toggle-option">
+                            <input type="checkbox" id="sri-lanka-context">
+                            <label for="sri-lanka-context">🇱🇰 Sri Lankan Context</label>
+                        </div>
+                        <div class="toggle-option">
+                            <input type="checkbox" id="difficulty-toggle">
+                            <label for="difficulty-toggle">🔥 Advanced Complexity</label>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="btn-primary">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Topics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Results Section -->
+    <section id="results-area" class="results-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2>Generated Ideas</h2>
+                <div class="action-buttons">
+                    <button id="copy-all-btn" class="btn-secondary"><i class="fa-regular fa-copy"></i> Copy All</button>
+                    <button id="regenerate-btn" class="btn-outline"><i class="fa-solid fa-rotate-right"></i> Regenerate</button>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <!-- Column 1: Topics -->
+                <div class="result-card topics-card">
+                    <h3><i class="fa-solid fa-list-ul"></i> Research Topics</h3>
+                    <ul id="topics-list" class="styled-list">
+                        <!-- Items populated by JS -->
+                    </ul>
+                </div>
+
+                <!-- Column 2: Objectives & Keywords -->
+                <div class="side-results">
+                    <div class="result-card objectives-card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Suggested Objectives</h3>
+                        <ul id="objectives-list" class="check-list">
+                            <!-- Items populated by JS -->
+                        </ul>
+                    </div>
+
+                    <div class="result-card keywords-card">
+                        <h3><i class="fa-solid fa-tags"></i> Keywords</h3>
+                        <div id="keywords-container" class="tags-container">
+                            <!-- Tags populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="info-section">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">1</div>
+                    <h4>Select Subject</h4>
+                    <p>Choose your field of study from our extensive database of disciplines.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">2</div>
+                    <h4>Set Rules</h4>
+                    <p>Adjust academic level and context to tailor the complexity.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">3</div>
+                    <h4>Generate</h4>
+                    <p>Get instant, rule-based topics patterns without any AI hallucinations.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">4</div>
+                    <h4>Export</h4>
+                    <p>Copy your favorites or download the full list for your proposal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Why Rule-Based?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Blazing Fast</h3>
+                    <p>Zero latency. Runs instantly in your browser.</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>100% Private</h3>
+                    <p>No data leaves your device. No cookies. No tracking.</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-wifi"></i>
+                    <h3>Works Offline</h3>
+                    <p>Once loaded, you don't even need an internet connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TopicForge. Built for Students.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
