@@ -1,10 +1,8 @@
 {
-  "version": 2,
-  "name": "research-topic-generator",
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ]
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "installCommand": null,
+  "analytics": {
+    "enable": true
+  }
 }
